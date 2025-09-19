@@ -60,82 +60,103 @@ body {
 /* Home Section Container */
 .home-section {
     height: 100vh;
-    flex-direction: column;
-}
-
-/* ISO Banner Part */
-.iso-banner-part {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    height: 40vh;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: var(--text-light);
     display: flex;
     align-items: center;
-    border-top: 3px solid var(--primary-color);
-    border-bottom: 1px solid #dee2e6;
 }
 
-.iso-content {
-    display: flex;
+/* Hero Part */
+.hero-part {
+    width: 100%;
+}
+
+.hero-part .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
     align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    padding: 3rem 20px;
+}
+
+.hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title .highlight {
+    color: var(--secondary-color);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    width: 140px;
+    height: 140px;
+    background-image: url('images/logo_iso.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: opacity 0.3s ease;
+}
+
+.hero-image:hover::after {
+    opacity: 1;
+}
+
+.iso-logo {
+    margin-top: 2.5rem;
     text-align: center;
 }
 
-.iso-logo-section img {
-    height: 80px;
+.iso-logo img {
+    height: 100px;
     width: auto;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3));
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
 }
 
-.iso-text h3 {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: 1px;
-}
-
-.iso-text p {
-    color: var(--text-dark);
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    opacity: 0.8;
-}
-
-.iso-link {
-    display: inline-block;
-    background: var(--primary-color);
-    color: var(--text-light);
-    padding: 0.7rem 1.3rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-    letter-spacing: 0.5px;
-}
-
-.iso-link:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.iso-logo img:hover {
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
     .home-section {
-        height: auto;
-        min-height: 100vh;
-    }
-    
-    .iso-banner-part {
-        height: auto;
-        min-height: 35vh;
-        padding: 2rem 0;
-    }
-    
-    .hero-part {
-        height: auto;
-        min-height: 65vh;
+        height: 100vh;
         padding: 2rem 0;
     }
     
@@ -143,86 +164,60 @@ body {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
-    }
-    
-    .iso-content {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    
-    .iso-logo-section img {
-        height: 50px;
-    }
-    
-    .iso-text h3 {
-        font-size: 1.2rem;
-    }
-    
-    .iso-text p {
-        font-size: 0.9rem;
+        padding: 2rem 20px;
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .hero-subtitle {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
     
     .hero-image img {
-        height: 200px;
+        height: 300px;
+    }
+    
+    .hero-image::after {
+        width: 110px;
+        height: 110px;
+        top: 15px;
+        left: 40px;
+    }
+    
+    .iso-logo img {
+        height: 70px;
     }
 }
 
 @media (max-width: 480px) {
-    .iso-banner-part {
-        min-height: 30vh;
+    .home-section {
+        height: 100vh;
         padding: 1.5rem 0;
-    }
-    
-    .hero-part {
-        min-height: 70vh;
-        padding: 1.5rem 0;
-    }
-    
-    .iso-logo-section img {
-        height: 40px;
-    }
-    
-    .iso-text h3 {
-        font-size: 1.1rem;
-    }
-    
-    .iso-text p {
-        font-size: 0.85rem;
-    }
-    
-    .iso-link {
-        padding: 0.6rem 1.1rem;
-        font-size: 0.8rem;
     }
     
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
     }
     
     .hero-subtitle {
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
     
     .hero-image img {
-        height: 180px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .iso-banner-part {
-        height: 35vh;
+        height: 250px;
     }
     
-    .hero-part {
-        height: 65vh;
+    .hero-image::after {
+        width: 85px;
+        height: 85px;
+        top: 10px;
+        left: 25px;
+    }
+    
+    .iso-logo img {
+        height: 55px;
     }
 }
 
@@ -312,55 +307,6 @@ body {
     background: var(--primary-color);
     margin: 3px 0;
     transition: 0.3s;
-}
-
-/* Hero Part */
-.hero-part {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-    height: 60vh;
-    color: var(--text-light);
-    display: flex;
-    align-items: center;
-}
-
-.hero-part .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.hero .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.hero-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 0.8rem;
-}
-
-.hero-title .highlight {
-    color: var(--secondary-color);
-}
-
-.hero-subtitle {
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.4;
-    opacity: 0.9;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* Seções gerais */
