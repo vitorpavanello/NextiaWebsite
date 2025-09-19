@@ -1,0 +1,126 @@
+/* Estilos específicos para a página de certificações */
+
+/* Certifications Hero Section */
+.certifications-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    padding: 120px 0 80px;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+/* Certifications Content Section */
+.certifications-content {
+    padding: 80px 0;
+    background: var(--background-light);
+    display: flex;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.certification-card {
+    background: var(--text-light);
+    padding: 4rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.certification-logo {
+    margin-bottom: 3rem;
+}
+
+.certification-logo img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+.certification-link {
+    margin-top: 2rem;
+}
+
+.certificate-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: var(--text-light);
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.certificate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    background: var(--text-light);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Logo link */
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .certification-card {
+        padding: 3rem 2rem;
+        margin: 0 1rem;
+    }
+    
+    .certification-logo img {
+        max-width: 250px;
+    }
+    
+    .certificate-btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certifications-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .certifications-content {
+        padding: 60px 0;
+    }
+    
+    .certification-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .certification-logo img {
+        max-width: 200px;
+    }
+    
+    .certificate-btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}

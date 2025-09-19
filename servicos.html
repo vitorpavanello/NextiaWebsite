@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - Nextia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="servicos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo_nextia.png" alt="Nextia"></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">HOME</a></li>
+                    <li><a href="servicos.html" class="nav-link active">SERVIÇOS</a></li>
+                    <li><a href="#quem-somos" class="nav-link">QUEM SOMOS</a></li>
+                    <li><a href="#contato" class="nav-link">CONTATO</a></li>
+                    <li><a href="certificacoes.html" class="nav-link">CERTIFICAÇÕES</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Seção 1: Nossos Serviços -->
+        <section class="services-hero">
+            <div class="container">
+                <div class="section-header">
+                    <h1>NOSSOS SERVIÇOS</h1>
+                    <div class="divider"></div>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card" onclick="scrollToSection('solucao')">
+                        <div class="service-icon">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Solução">
+                        </div>
+                        <h3>A SOLUÇÃO</h3>
+                        <p>Solução em Cloud, on premisses, ou em colocation. Parametrização de diversas atividades feitas diretamente pelo usuário final.</p>
+                    </div>
+                    <div class="service-card" onclick="scrollToSection('marketing')">
+                        <div class="service-icon">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80" alt="Marketing">
+                        </div>
+                        <h3>RECURSOS DE MARKETING</h3>
+                        <p>Poderosos recursos para a criação e oferta de produtos, permitindo abordar clientes dentro de contexto e de acordo com canal de distribuição, físico ou digital.</p>
+                    </div>
+                    <div class="service-card" onclick="scrollToSection('operacao')">
+                        <div class="service-icon">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Operação">
+                        </div>
+                        <h3>OPERAÇÃO</h3>
+                        <p>Acompanhamento total da vida do produto do cliente: do momento da venda ao encerramento do contrato passando por todas as jornadas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: A Solução -->
+        <section id="solucao" class="solution-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>A SOLUÇÃO</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="solution-content">
+                    <div class="functionality-block">
+                        <h3>PRINCIPAIS FUNCIONALIDADES</h3>
+                        <p>A solução da Nextia é modular, utilizando SQL Server como banco de dados. Dentre as suas funcionalidades destacamos:</p>
+                        <div class="features-grid">
+                            <div class="feature-item">Cotações (apresenta módulo de cálculo interno)</div>
+                            <div class="feature-item">Emissões de contratos, propostas</div>
+                            <div class="feature-item">Cobrança recorrente em qualquer meio de pagamento</div>
+                            <div class="feature-item">Controle de pagamento/recebimento de remunerados e remunerações</div>
+                            <div class="feature-item">Acompanhamento de metas</div>
+                            <div class="feature-item">Cancelamentos, renovações, reajustes, alteração de beneficiários</div>
+                            <div class="feature-item">Campanhas de retenção, upgrade, venda cruzada, pontos</div>
+                            <div class="feature-item">Integração com fornecedores de produtos ou serviços on line ou batch</div>
+                            <div class="feature-item">Integração com CRM, Financeiro, BigData do cliente Nextia</div>
+                        </div>
+                    </div>
+                    <div class="hosting-block">
+                        <h3>HOSTING</h3>
+                        <p>Pode ser pela Nextia (nuvem ou "colocation") ou "on premisses". A infra-estrutura é definida com base ao número de usuários, integrações com parceiros e fornecedores e tipos e volumes dos produtos que serão comercializados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Recursos de Marketing -->
+        <section id="marketing" class="marketing-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>RECURSOS DE MARKETING</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="marketing-content">
+                    <div class="marketing-block">
+                        <h3>PRODUTOS</h3>
+                        <div class="content-with-image">
+                            <div class="text-content">
+                                <p>Partindo da premissa que o cliente Nextia conhece o seu público e deseja ter em seu portfolio, produtos diferenciados e adequados, que possam destacar sua marca, proporcionamos a criação de produtos parametrizáveis pelo usuário da solução.</p>
+                                <p>Nosso software leva em conta que cada benefício, serviço ou cobertura podem ser unidos como em um quebra cabeça, gerando ilimitadas oportunidades de encantar os consumidores, respeitando legislação vigente e características específicas.</p>
+                            </div>
+                            <div class="image-content">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Analytics e Big Data">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="marketing-block">
+                        <h3>OFERTA</h3>
+                        <p>Integração com Analytics ou BigData. Além disto a Nextia pode auxiliar na elaboração de modelos preditivos: o consumidor recebe um score e conforme contexto e canal de distribuição (presencial, APP, site, push, PoS...) são ofertados os produtos diferenciados.</p>
+                        <p>A oferta é sempre associada a uma campanha e com possibilidade de aquisição do produto inteiramente digital, incluindo opções de pagamento. Disponibilizamos APIs, APP, Site, customizáveis para empresa.</p>
+                    </div>
+                    
+                    <div class="marketing-block">
+                        <h3>REMUNERADOS E REMUNERAÇÕES</h3>
+                        <p>No caso de vendas pessoais ou mesmo por parceiros, em que seja necessário determinar a origem da captação, a Nextia oferece ampla possibilidade de definir a remuneração, acompanhando também o desempenho dos envolvidos.</p>
+                        <p>Proporciona o envolvimento de toda a organização, com seguimento de performance não somente individual como por equipes. A visualização dos resultados é liberada de acordo com a hierarquia.</p>
+                        <p>Os incentivos podem estar atrelados à meta e a desempenho, possibilitando a parametrização de estornos em caso de vendas indevidas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Operação -->
+        <section id="operacao" class="operation-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>OPERAÇÃO</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="operation-content">
+                    <div class="operation-block">
+                        <h3>CONSULTORIA OPERACIONAL</h3>
+                        <p>Por meio de equipe experiente no mercado, que fala na mesma linguagem de seus clientes, a Nextia analisa processos existentes e desejados, observando de legislação vigente, tanto específica de produtos como de relacionamento, reunindo as principais atividades em jornadas.</p>
+                        <p>O resultado do trabalho resulta em melhor visualização do projeto de implantação e integração da solução ao dia a dia da empresa.</p>
+                    </div>
+                    
+                    <div class="operation-block">
+                        <h3>SEM RESTRIÇÕES FÍSICAS</h3>
+                        <p>Cliente Nextia define o nível de envolvimento operacional: onde começam e terminam suas atividades, bem como SLAs.</p>
+                        <p>O atendimento ao consumidor pode ser prestado em qualquer lugar, pelo fornecedor ou parceiro escolhido, gerenciado ou não por equipe especializada da Nextia. A interface multilinguagem, permite operações internacionais de forma integrada.</p>
+                    </div>
+                    
+                    <div class="operation-block">
+                        <h3>CONTROLE TOTAL DE PROCESSOS E BAIXO CUSTO OPERACIONAL</h3>
+                        <p>As jornadas do consumidor são controladas por workflow integrado, diminuindo a necessidade de pessoas envolvidas em back-office e aumentando a eficiência. A grande maioria das solicitações é encaminhada e resolvida de forma automática, a partir de central de relacionamento ou solicitação via APP ou Site.</p>
+                        <p><strong>Qualidade e performance garantidas.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 5: Seja Nosso Parceiro -->
+        <section class="partner-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>SEJA NOSSO PARCEIRO</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="partner-content">
+                    <p>Coloque o seu produto ou serviço como mais uma opção aos Clientes da Nextia</p>
+                    <a href="#contato" class="cta-button">ENTRE EM CONTATO</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Política de Segurança -->
+    <section class="security-policy">
+        <div class="container">
+            <div class="policy-content">
+                <h2>Política Da Segurança Da Informação</h2>
+                <p>"A Nextia atua no processamento de produtos de afinidade para o mercado de seguros, assistências, incluindo plano de saúde e odontológico, mantendo o compromisso de prover serviços que atendam aos requisitos de seus clientes, regulamentares e de negócio, assegurando a confidencialidade, integridade e disponibilidade das informações, melhorando continuamente."</p>
+                <a href="https://nextia-public-files.s3.sa-east-1.amazonaws.com/Politica_publica_privacidade_V1_092024.pdf" target="_blank" class="policy-btn">Política de Privacidade</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>NEXTIA</h3>
+                    <p>Conectando negócios de forma inteligente</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="#quem-somos">Quem Somos</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="certificacoes.html">Certificações</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>Entre em contato conosco</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nextia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="servicos.js"></script>
+</body>
+</html>
