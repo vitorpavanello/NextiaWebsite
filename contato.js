@@ -2,6 +2,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contactForm');
     const submitBtn = document.querySelector('.submit-btn');
+    
+    // Verificar se os elementos existem
+    if (!form) {
+        console.error('Formulário de contato não encontrado');
+        return;
+    }
+    
+    if (!submitBtn) {
+        console.error('Botão de envio não encontrado');
+        return;
+    }
 
     // Animações de entrada
     const observerOptions = {
@@ -35,9 +46,28 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('input', () => clearError(input));
     });
 
+    // Função de sanitização de entrada
+    function sanitizeInput(input) {
+        return input.replace(/[<>"'&]/g, function(match) {
+            const escapeMap = {
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#x27;',
+                '&': '&amp;'
+            };
+            return escapeMap[match];
+        });
+    }
+
     // Função de validação de campo
     function validateField(field) {
-        const value = field.value.trim();
+        let value = field.value.trim();
+        
+        // Sanitizar entrada
+        value = sanitizeInput(value);
+        field.value = value;
+        
         let isValid = true;
         let errorMessage = '';
 
@@ -47,15 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Validação por tipo de campo
         switch (field.type) {
             case 'email':
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(value)) {
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailRegex.test(value) || value.length > 254) {
                     errorMessage = 'Por favor, insira um email válido';
                     isValid = false;
                 }
                 break;
             case 'text':
-                if (value.length < 2) {
-                    errorMessage = 'Este campo deve ter pelo menos 2 caracteres';
+                if (value.length < 2 || value.length > 100) {
+                    errorMessage = 'Este campo deve ter entre 2 e 100 caracteres';
                     isValid = false;
                 }
                 break;
@@ -66,9 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 break;
             default:
-                if (field.tagName === 'TEXTAREA' && value.length < 10) {
-                    errorMessage = 'A mensagem deve ter pelo menos 10 caracteres';
-                    isValid = false;
+                if (field.tagName === 'TEXTAREA') {
+                    if (value.length < 10 || value.length > 1000) {
+                        errorMessage = 'A mensagem deve ter entre 10 e 1000 caracteres';
+                        isValid = false;
+                    }
                 }
         }
 
@@ -115,6 +147,12 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        // Verificar se o formulário existe e é válido
+        if (!form || !submitBtn) {
+            console.error('Elementos do formulário não encontrados');
+            return;
+        }
+
         // Validar todos os campos
         let isFormValid = true;
         inputs.forEach(input => {
@@ -124,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (!isFormValid) {
+            showErrorMessage('Por favor, corrija os erros no formulário antes de enviar.');
             return;
         }
 
@@ -167,16 +206,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mostrar mensagem de erro
     function showErrorMessage(message) {
         const errorDiv = document.createElement('div');
-        errorDiv.className = 'error-message';
-        errorDiv.textContent = message;
+        errorDiv.className = 'form-error-message';
+        errorDiv.textContent = message; // Usando textContent para evitar XSS
         errorDiv.style.textAlign = 'center';
         errorDiv.style.padding = '1rem';
         errorDiv.style.marginBottom = '1rem';
+        errorDiv.style.backgroundColor = '#f8d7da';
+        errorDiv.style.color = '#721c24';
+        errorDiv.style.border = '1px solid #f5c6cb';
+        errorDiv.style.borderRadius = '5px';
         
         form.parentNode.insertBefore(errorDiv, form);
         
         setTimeout(() => {
-            errorDiv.remove();
+            if (errorDiv.parentNode) {
+                errorDiv.remove();
+            }
         }, 5000);
     }
 });

@@ -1,8 +1,10 @@
 // Função para scroll suave para seções específicas
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
-    if (section) {
-        const headerHeight = document.querySelector('.header').offsetHeight;
+    const header = document.querySelector('.header');
+    
+    if (section && header) {
+        const headerHeight = header.offsetHeight;
         const sectionTop = section.offsetTop - headerHeight - 20;
         
         window.scrollTo({
@@ -40,9 +42,5 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Animação especial para os cards de serviço
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.2}s`;
-    });
+    // Cards de serviço já estão inclusos no animatedElements, removendo redundância
 });
